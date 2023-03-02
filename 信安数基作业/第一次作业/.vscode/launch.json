@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/lixiaoyi/Desktop/我编的程序/c++/信安数基/第一次作业",
+      "program": "/Users/lixiaoyi/Desktop/我编的程序/c++/信安数基/第一次作业/build/Debug/outDebug"
+    }
+  ]
+}
