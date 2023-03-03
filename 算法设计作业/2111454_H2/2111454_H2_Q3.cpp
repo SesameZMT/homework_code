@@ -16,6 +16,7 @@
         91 92 93 94 95 96 97 98 99 100
 */
 
+//二分查找
 int bsearch(int a,int *b,int n){
     int t = n / 2;
     int max = n;
@@ -39,6 +40,8 @@ int bsearch(int a,int *b,int n){
     return -1;
 }
 
+//时间复杂度为O(n^2)
+//两重for循环
 void nn(int *a,int n,int t)
 {
     for(int i = 0;i < n;i++){
@@ -51,6 +54,8 @@ void nn(int *a,int n,int t)
     }
 }
 
+//时间复杂度为O(nlogn)
+//一重for循环内嵌套一个二分查找
 void nlogn(int *a,int n,int t)
 {
     for(int i = 0;i < n;i++){
@@ -63,6 +68,8 @@ void nlogn(int *a,int n,int t)
     }
 }
 
+//时间复杂度为O(n)
+//两个标志位，a[i]+a[j]大则末标志前移，小则前标志后移
 void n1(int *a,int n,int t)
 {
     int i = 0;
@@ -87,12 +94,15 @@ int main()
     int n;
     int * a = new int[n];
     int t;
+    //输入n
     std::cout<<"please input n:";
     std::cin>>n;
+    //输入数组
     std::cout<<"please input a sorted array of n distinct integers:";
     for(int i = 0;i < n;i++){
         std::cin>>a[i];
     }
+    //输入目标值
     std::cout<<"please input target t:";
     std::cin>>t;
     clock_t start_time=clock();

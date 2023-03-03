@@ -38,6 +38,8 @@ int bsearch(int a,int *b,int n){
     return -1;
 }
 
+//时间复杂度为O(n^3)
+//三重for循环
 void nnn(int *a,int n,int t)
 {
     for(int i = 0;i < n;i++){
@@ -53,6 +55,8 @@ void nnn(int *a,int n,int t)
     }
 }
 
+//时间复杂度为O(n^2logn)
+//两重for循环后执行二分查找
 void nnlogn(int *a,int n,int t)
 {
      for(int i = 0;i < n;i++){
@@ -67,6 +71,8 @@ void nnlogn(int *a,int n,int t)
     }
 }
 
+//时间复杂度为O(n^2)
+//一重for循环后进行双标志法查找
 void nn(int *a,int n,int t)
 {
     for(int k = 0;k < n;k++){
@@ -94,8 +100,10 @@ int main()
     int n;
     int * a = new int[n];
     int t;
-    std::cout<<"please input n:";
+    //输入n
+    std::cout<<"please inpt n:";
     std::cin>>n;
+    //输入数组
     std::cout<<"please input a sorted array of n distinct integers:";
     for(int i = 0;i < n;i++){
         std::cin>>a[i];
