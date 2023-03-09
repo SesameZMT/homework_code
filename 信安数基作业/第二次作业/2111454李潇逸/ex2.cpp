@@ -47,17 +47,17 @@ int main()
         std::cout<<"gcd(a,b)="<<k<<std::endl;
         std::cout<<"lcm(a,b)="<<lcm(a,b,k)<<std::endl;
         std::cout<<"a^(-1)=";
-        tn(0,1,0,b,a,1);
+        tn(0,1,b/a,a,b%a,1);
         std::cout<<"b^(-1)=";
-        sn(1,0,0,b,a,1);
+        sn(1,0,b/a,a,b%a,1);
     }
     if(a >= b){
         int k = gcd(b,a);
         std::cout<<"gcd(a,b)="<<k<<std::endl;
         std::cout<<"lcm(a,b)="<<lcm(b,a,k)<<std::endl;
         std::cout<<"a^(-1)=";
-        sn(1,0,0,b,a,1);
+        sn(1,0,a/b,b,a%b,1);
         std::cout<<"b^(-1)=";
-        tn(0,1,0,b,a,1);
+        tn(0,1,a/b,b,a%b,1);
     }
 }
