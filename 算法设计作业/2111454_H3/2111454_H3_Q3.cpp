@@ -63,7 +63,8 @@ int main()
     int m;//边数
     std::cin>>n>>m;
     int ** k = new int * [n];
-    int * color = new int[n];
+    int * color = new int[n];//颜色数组，用1和0表示两种状态
+    //初始化
     for(int i = 0;i < n;i++){
         k[i] = new int[n];
         color[i] = -1;
@@ -78,10 +79,33 @@ int main()
         k[a][b] = 1;
         k[b][a] = 1;
     }
+    bool flag = true;
 
     queue q;
-    q.push()
-    while()
+    q.push(0);
+    while(q.num != 0){
+        int temp = q.pop();
+        if(temp == 0){
+            color[temp] = 1;
+        }//当是第一个时，直接将颜色赋值为1
+        for(int i = 0;i < n;i++){
+            if(k[temp][i] == 1){
+                if(color[i] == color[temp]){//当两个节点有边相连且颜色相同，必定不是二分图，跳出循环
+                    flag = false;
+                    break;
+                }
+                else if(color[i] == -1){//当两个节点有边相连且未被赋值，将该节点入队且染成与本节点相反的颜色
+                    color[i] = 1 - color[temp];
+                    q.push(i);
+                }
+            }
+        }
+    }
 
-
+    if(flag){
+        std::cout<<"Yes";
+    }
+    else{
+        std::cout<<"No";
+    }
 }
