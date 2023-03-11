@@ -57,75 +57,18 @@ int queue::pop()
     
 }
 
-int Max(int n,int * a)
-{
-    int p = -1;
-    for(int i = 0;i < n;i++){
-        if(a[i] > p){
-            p = a[i];
-        }
-    }
-    return p;
-}
-
-void BFS(int n,int i,int ** k)
-{
-    int * ans = new int[n];
-    for(int j = 0;j < n;j++){
-        ans[j] = -1;
-    }
-    queue q;
-    q.push(i);
-    
-    ans[i] = 0;
-    while(q.num != 0){
-        int z = q.pop();
-        for(int i = 0;i < n;i++){
-            if(k[z][i] == 1){
-                q.push(i);
-                k[z][i] = 0;
-                k[i][z] = 0;
-                ans[i] = ans[z] + 1;
-            }
-        }
-    }
-
-    for(int i = 0;i <= Max(n,ans);i++){
-        for(int j = 0;j < n;j++){
-            if(ans[j] == i){
-                std::cout<<j<<" ";
-            }
-        }
-    }
-    
-}
-
-void DFS(int n,int i,int ** z)
-{
-    std::cout<<i<<" ";
-    for(int j = 0;j < n;j++){
-        if(z[i][j] == 1){
-            z[i][j] = 0;
-            z[j][i] = 0;
-            DFS(n,j,z);
-        }
-    }
-}
-
 int main()
 {
-    int n;//节点个数
+    int n;//节点数
     int m;//边数
-    int i;//开始节点
-    std::cin>>n>>m>>i;
+    std::cin>>n>>m;
     int ** k = new int * [n];
-    int ** z = new int * [n];
+    int * color = new int[n];
     for(int i = 0;i < n;i++){
         k[i] = new int[n];
-        z[i] = new int[n];
+        color[i] = -1;
         for(int j = 0;j < n;j++){
             k[i][j] = 0;
-            z[i][j] = 0;
         }
     }
     for(int i = 0;i < m;i++){
@@ -134,11 +77,11 @@ int main()
         std::cin>>a>>b;
         k[a][b] = 1;
         k[b][a] = 1;
-        z[a][b] = 1;
-        z[b][a] = 1;
     }
-    
-    BFS(n,i,k);
-    std::cout<<std::endl;
-    DFS(n,i,z);
+
+    queue q;
+    q.push()
+    while()
+
+
 }
