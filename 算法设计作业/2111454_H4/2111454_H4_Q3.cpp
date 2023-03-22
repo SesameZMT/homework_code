@@ -38,8 +38,11 @@ int main()
             z--;
         }
         else{//如果不是
-            if(day + a[0][k] > a[1][k]){//当开始日期大于day时，将自己的结束日期复制给day
-                ans = day + a[0][k] - a[1][k];
+            if(day + a[0][k] > a[1][k]){//当已经经过的时间day与将要过去的时间相加大于截止日期时，
+                int t = day + a[0][k] - a[1][k];//令t = day + a[0][k] - a[1][k] 
+                if(t > ans){
+                    ans = t;
+                }//当现在的差值大于原先的差值时，ans替换为t
                 day += a[0][k];
                 a[1][k] = -1;
                 z--;
