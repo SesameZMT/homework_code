@@ -1,5 +1,4 @@
 #include<iostream>
-#include<math.h>
 #include<cmath>
 
 int d2b(int n,int num,char *a) //将十进制数n变为二进制存入char数组a中,返回二进制数的长度num
